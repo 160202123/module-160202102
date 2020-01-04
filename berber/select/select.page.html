@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Select
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="stacked">Latitude <ion-text color="danger">*</ion-text></ion-label>
+    <ion-input required type="text" value="" [(ngModel)]="inputLat"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Longitude <ion-text color="danger">*</ion-text></ion-label>
+    <ion-input required type="text"value="" [(ngModel)]="inputLong"></ion-input>
+  </ion-item>
+  <ion-list>
+    <ion-item *ngFor="let berber of berberler">
+
+        <h2>{{berber}}
+          <ion-fab vertical="center" horizontal="end" slot="fixed">
+            <ion-fab-button size="small" color="danger"></ion-fab-button>
+          </ion-fab>
+        </h2>
+        
+     
+    </ion-item>
+  </ion-list>
+  <ion-button routerLink="/">Ana Sayfa</ion-button>
+  <ion-button (click)="getBerberler()">Arama</ion-button>
+  <ion-button (click)="getLoc()">Konum Al</ion-button>
+</ion-content>
